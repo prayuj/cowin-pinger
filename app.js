@@ -6,7 +6,8 @@ const isMatch = require('date-fns/isMatch')
 const sound = require("sound-play");
 const path = require("path");
 const notificationSound = path.join(__dirname, "sounds/beep.wav");
-const keepAliveNotificationSound = path.join(__dirname, "sounds/short-beep.wav")
+const keepAliveNotificationSound = path.join(__dirname, "sounds/short-beep.wav");
+const errorSound = path.join(__dirname, "sounds/error.wav")
 
 const defaultInterval = 10; // interval between pings in minutes
 const appointmentsListLimit = 2 // Increase/Decrease it based on the amount of information you want in the notification.
@@ -175,6 +176,7 @@ function pingCowin({ key, hook, age, districtId, appointmentsListLimit, date, pi
             }
         }
     }).catch((err) => {
+        sound.play(errorSound)
         console.log("Error: " + err.message);
     });
 }

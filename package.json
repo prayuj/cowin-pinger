@@ -4,7 +4,8 @@
   "description": "Get notified on your phone when there is a vaccine slot available at your location, by running a script on your computer. Uses Cowin portal's public API.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "try-this": "node app.js run --age=46 --district=145 --dose=1 --keep-alive=TRUE --interval=1"
   },
   "author": "Abhinav Dinesh",
   "license": "ISC",
